@@ -11,4 +11,4 @@ const App = () => (
     <div>CSS: Empty CSS</div>
   </div>
 );
-ReactDOM.render(<App />, document.getElementById("app"));
+ReactDOM.render(<App />, document.querySelector("#app"));

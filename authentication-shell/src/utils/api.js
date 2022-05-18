@@ -1,8 +1,8 @@
 import axios from "axios";
 
 const getDefaultPath = () => {
-  return "https://f7ac-103-58-152-65.in.ngrok.io/"
-}
+  return "https://f7ac-103-58-152-65.in.ngrok.io/";
+};
 
 const transformResponse = (input) => {
   try {
@@ -37,9 +37,9 @@ const apiFactory = (baseUrl = getDefaultPath(), header = {}) => {
 
   service.interceptors.request.use(
     (config) => {
-      const token = sessionStorage.getItem("_token")
+      const token = sessionStorage.getItem("_token");
       if (token) {
-        config.headers.Authorization = "Bearer " + token; 
+        config.headers.Authorization = "Bearer " + token;
       }
       return config;
     },
