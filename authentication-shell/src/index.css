@@ -1,0 +1,100 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald:wght@300&display=swap');
+
+body {
+  font-family: 'Oswald', sans-serif !important;
+  font-size: 1.1rem !important;
+  color: white !important;
+  letter-spacing: 2px;
+}
+
+.heading {
+  font-family: 'Bebas Neue', cursive !important;
+}
+
+.centerMe {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.bggrading {
+  background-image: linear-gradient(76.3deg, rgba(44, 62, 78, 1) 12.6%, rgba(69, 103, 131, 1) 82.8%);
+}
+
+.w-40 {
+  width: 40%;
+}
+
+.glassbg {
+  background: rgba(255, 255, 255, 0.15);
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 12px !important;
+}
+
+.inputfields,
+.inputfields:focus {
+  background: transparent;
+  border: 2px solid rgba(245, 245, 245, 0.743);
+  border-radius: 20px;
+  letter-spacing: 2px;
+  color: white;
+  padding-left: 18px;
+  box-shadow: none;
+}
+
+/* From uiverse.io by @WhiteNervosa */
+.forgetPassword {
+  font-size: 12px;
+  letter-spacing: 2px;
+  color: #e1e1e1;
+  font-family: inherit;
+  cursor: pointer;
+  position: relative;
+  border: none;
+  background: none;
+  text-transform: uppercase;
+  transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
+  transition-duration: 400ms;
+  transition-property: color;
+}
+
+
+.forgetPassword:focus,
+.forgetPassword:hover {
+  color: #fff;
+}
+
+.forgetPassword:focus:after,
+.forgetPassword:hover:after {
+  width: 100%;
+  left: 0%;
+}
+
+.forgetPassword:after {
+  content: "";
+  pointer-events: none;
+  bottom: -2px;
+  left: 50%;
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  background-color: #fff;
+  transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
+  transition-duration: 400ms;
+  transition-property: width, left;
+}
+
+.profileLayout>div {
+  width: 45%;
+  display: inline-block;
+  margin: 10px;
+}
+
+.profileLayout>div>img {
+  width: 400px;
+  height: 400px;
+  border-radius: 200px;
+}
