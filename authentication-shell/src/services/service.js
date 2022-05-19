@@ -17,8 +17,8 @@ export const getUser = async () => {
   return res.data;
 };
 export const getUserDetails = async (id) => {
-    const res = await apiFactory().get(`/users/${id}`);
-    return res.data;
+  const res = await apiFactory().get(`/users/${id}`);
+  return res.data;
 };
 export async function getProfile(token) {
   return apiFactory().get("/authorized");
