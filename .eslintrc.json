@@ -1,0 +1,58 @@
+{
+    "env": {
+        "browser": true,
+        "es2021": true
+    },
+    "extends": [
+        "eslint:recommended",
+        "plugin:react/recommended",
+        "standard",
+        "plugin:unicorn/recommended",
+        "prettier"
+    ],
+    "parserOptions": {
+        "ecmaFeatures": {
+            "jsx": true
+        },
+        "ecmaVersion": "latest",
+        "sourceType": "module"
+    },
+    "plugins": [
+        "react",
+        "unicorn",
+        "prettier"
+    ],
+    "ignorePatterns": ["webpack.config.js"],
+    "rules": {
+        "react/react-in-jsx-scope": "off",
+        "prettier/prettier": ["error",
+            {
+              "endOfLine": "auto"
+            }],
+          "semi": ["error", "always"],
+          "object-curly-spacing": ["error", "always"],
+          "camelcase": "off",
+          "no-underscore-dangle": "off",
+          "no-shadow": "off",
+          "no-new": 0,
+          "class-methods-use-this": "off",
+          "unicorn/prevent-abbreviations": "off",
+          "unicorn/consistent-destructuring": "off",
+          "unicorn/consistent-function-scoping": "off",
+          "unicorn/filename-case": [
+            "error",
+            {
+              "case": "kebabCase",
+              "ignore": [
+                "/*.jsx"
+              ]
+            }
+          ]
+    },
+    "settings": {
+      "react": {
+      "pragma": "React",
+      "version": "^17.0.2"
+      }
+      }
+}

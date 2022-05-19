@@ -1,0 +1,25 @@
+version: '3.8'
+services:
+  application-shell:
+    build: 
+      context: ./application-shell
+      dockerfile: Dockerfile
+    container_name: 'application-shell'
+    ports:
+      - '3000:3000'
+
+  authentication-shell:
+    build:
+      context: ./authentication-shell
+      dockerfile: Dockerfile
+    container_name: 'authentication-shell'
+    ports:
+      - '3002:3002'
+
+  component-shell:
+    build: 
+      context: ./component-shell
+      dockerfile: Dockerfile
+    container_name: 'component-shell'
+    ports:
+      - '3001:3001'
