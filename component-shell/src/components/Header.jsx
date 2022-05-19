@@ -30,14 +30,15 @@ export default function Header() {
               Home
             </Link>
             <Nav.Link>About</Nav.Link>
-            {logInCheck && (<>
-              <Link to="/users" className="nav-link">
-                Users
-              </Link>
-              <Link to="/profile" className="nav-link">
-                Profile
-              </Link>
-            </>
+            {logInCheck && (
+              <>
+                <Link to="/users" className="nav-link">
+                  Users
+                </Link>
+                <Link to="/profile" className="nav-link">
+                  Profile
+                </Link>
+              </>
             )}
           </Nav>
         </Container>

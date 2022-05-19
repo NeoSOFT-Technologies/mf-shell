@@ -4,7 +4,7 @@ import axios from "axios";
 
 const getDefaultPath = () => {
   return process.env.API_BASE_URL || "https://localhost:5000/";
-}
+};
 
 const transformResponse = (input) => {
   try {
