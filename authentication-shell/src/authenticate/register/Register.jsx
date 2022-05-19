@@ -4,19 +4,20 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "../../index.css";
 import { useNavigate } from "react-router-dom";
 import { regexForName, regexForEmail, regexForPassword } from "../../resources/constants"
+import { register } from "../../services/service";
 
 export default function Register() {
   const navigate = useNavigate();
   const [formData, setFormData] = useState({
     firstName: "",
-    LastName: "",
+    lastName: "",
     email: "",
     password: "",
     confirmPassword: "",
   });
   const [formError, setFormError] = useState({
     firstName: "",
-    LastName: "",
+    lastName: "",
     email: "",
     password: "",
     confirmPassword: "",
@@ -28,8 +29,8 @@ export default function Register() {
       case "firstName":
         setFormError({ ...formError, firstName: regexForName.test(value) ? "" : "Enter a Valid First Name", });
         break;
-      case "LastName":
-        setFormError({ ...formError, LastName: regexForName.test(value) ? "" : "Enter a Valid Last Name", });
+      case "lastName":
+        setFormError({ ...formError, lastName: regexForName.test(value) ? "" : "Enter a Valid Last Name", });
         break;
       case "email":
         setFormError({ ...formError, email: regexForEmail.test(value) ? "" : "Enter a Valid Email", });
@@ -45,11 +46,11 @@ export default function Register() {
     setFormData({ ...formData, [name]: value });
   };
   const handleFormEmpty = () => {
-    const empty = !!(formData.firstName === "" && formData.LastName === "" && formData.email === "" && formData.password === "" && formData.confirmPassword === "");
+    const empty = !!(formData.firstName === "" && formData.lastName === "" && formData.email === "" && formData.password === "" && formData.confirmPassword === "");
     return empty;
   };
   const handleFormValidate = () => {
-    const validate = !!(formError.firstName === "" && formError.LastName === "" && formError.email === "" && formError.password === "" && formError.confirmPassword === "");
+    const validate = !!(formError.firstName === "" && formError.lastName === "" && formError.email === "" && formError.password === "" && formError.confirmPassword === "");
     return validate;
   };
   const handleFormSubmit = (event) => {
@@ -57,8 +58,13 @@ export default function Register() {
     if (!handleFormEmpty()) {
       if (handleFormValidate()) {
         console.log(formData);
-        // 
-        // register(formData).then(() => { navigate("/") })
+        const newFormData = {
+          firstName: formData.firstName,
+          lastName: formData.lastName,
+          email: formData.email,
+          password: formData.password
+        }
+        register(newFormData).then(() => { navigate("/login") })
       } else {
         // ToastAlert("Please Enter Valid Details", "warning");
         console.log("Please Enter Valid Details", "warning");
@@ -78,7 +84,7 @@ export default function Register() {
         </Form.Group>
         <Form.Group className="mb-3">
           <Form.Label>Last Name</Form.Label>
-          <Form.Control type="text" name="LastName" value={formData.LastName} onChange={handleInputChange} className="inputfields" />
+          <Form.Control type="text" name="lastName" value={formData.lastName} onChange={handleInputChange} className="inputfields" />
         </Form.Group>
         <Form.Group className="mb-3">
           <Form.Label>Email</Form.Label>
