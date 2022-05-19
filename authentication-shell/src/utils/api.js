@@ -1,8 +1,10 @@
 import axios from "axios";
+// import dotenv from "dotenv";
+// dotenv.config();
 
 const getDefaultPath = () => {
-  return "https://f7ac-103-58-152-65.in.ngrok.io/";
-};
+  return process.env.API_BASE_URL || "https://localhost:5000/";
+}
 
 const transformResponse = (input) => {
   try {

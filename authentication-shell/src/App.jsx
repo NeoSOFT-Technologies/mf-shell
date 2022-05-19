@@ -1,7 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import { BrowserRouter as Router } from "react-router-dom";
-import Register from "./authenticate/Register";
+// import Login from "./authenticate/login/Login";
+import Register from "./authenticate/register/Register";
 
 // import "./index.css";
 
@@ -15,6 +16,7 @@ const App = () => (
     </div> */}
     <Router>
       <Register />
+      {/* <Login/> */}
     </Router>
   </>
 );
