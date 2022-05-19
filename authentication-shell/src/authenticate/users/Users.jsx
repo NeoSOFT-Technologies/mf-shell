@@ -1,16 +1,25 @@
 import React, { useEffect, useState } from "react";
 import { getUser } from "../../services/service";
-import { Card, Col, Row } from "react-bootstrap";
+import { Button, Card, Col, Row } from "react-bootstrap";
+import { useNavigate } from "react-router-dom";
 import "./users.css";
 import "../../index.css";
+
 export default function Users() {
+  const navigate = useNavigate();
   const [users, setUsers] = useState([]);
+
   useEffect(() => {
     getUser().then((res) => {
       console.log(res.data);
       setUsers(res.data);
     });
   }, []);
+
+  const handleUserNavigate = (id) => {
+    console.log(id);
+    navigate(`/users/${id}`);
+  };
   return (
     <div>
       <Row className="g-4 container-fluid mt-3">
@@ -34,7 +43,13 @@ export default function Users() {
                       <i className="bi bi-x-circle-fill text-danger"></i>
                     )}
                   </Card.Text>
-                  <button className="forgetPassword">learn More</button>
+                  <Button
+                    className="forgetPassword"
+                    onClick={() => handleUserNavigate(val.id)}
+                  >
+                    Details
+                  </Button>
+                  {/* <button className='forgetPassword'>learn More</button> */}
                 </Card.Body>
               </Card>
             </Col>

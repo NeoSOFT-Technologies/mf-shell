@@ -54,7 +54,7 @@ module.exports = {
         "./Register": "./src/authenticate/register/Register.jsx",
         "./Profile": "./src/authenticate/profile/Profile.jsx",
         "./User": "./src/authenticate/users/Users.jsx",
-
+        "./UserDetails": "./src/authenticate/users/UserDetails.jsx",
       },
       shared: {
         ...deps,

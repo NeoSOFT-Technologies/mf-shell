@@ -1,8 +1,9 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import { BrowserRouter as Router } from "react-router-dom";
-// import Login from "./authenticate/login/Login";
-// import Register from "./authenticate/register/Register";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import Login from "./authenticate/login/Login";
+import Register from "./authenticate/register/Register";
+import UserDetails from "./authenticate/users/UserDetails";
 import Users from "./authenticate/users/Users";
 
 // import "./index.css";
@@ -16,8 +17,12 @@ const App = () => (
       <div>CSS: Empty CSS</div>
     </div> */}
     <Router>
-      <Users />
-      {/* <Login/> */}
+      <Routes>
+        <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
+        <Route path="/" element={<Users />} />
+        <Route path="/users/:id" element={<UserDetails />} />
+      </Routes>
     </Router>
   </>
 );
