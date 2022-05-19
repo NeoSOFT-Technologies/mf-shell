@@ -52,8 +52,9 @@ module.exports = {
       exposes: {
         "./Login": "./src/authenticate/login/Login.jsx",
         "./Register": "./src/authenticate/register/Register.jsx",
-        "./User": "./src/authenticate/users/Users.jsx",
+        "./Users": "./src/authenticate/users/Users.jsx",
         "./UserDetails": "./src/authenticate/users/UserDetails.jsx",
+        "./Home": "./src/unauthorized/Home.jsx",
       },
       shared: {
         ...deps,
