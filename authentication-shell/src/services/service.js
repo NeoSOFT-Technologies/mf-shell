@@ -12,6 +12,10 @@ export const register = async (data) => {
     const res = await apiFactory().post("/users", data);
     return res;
 };
+export const getUser = async () => {
+    const res = await apiFactory().get("/users");
+    return res.data;
+};
 export async function getProfile(token) {
     return apiFactory().get("/authorized");
 }

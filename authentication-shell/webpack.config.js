@@ -53,6 +53,7 @@ module.exports = {
         "./Login": "./src/authenticate/login/Login.jsx",
         "./Register": "./src/authenticate/register/Register.jsx",
         "./Profile": "./src/authenticate/profile/Profile.jsx",
+        "./User": "./src/authenticate/users/Users.jsx",
 
       },
       shared: {

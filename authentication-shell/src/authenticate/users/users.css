@@ -1,0 +1,10 @@
+.customCard {
+    background: transparent;
+    height: 350px;
+    border: 2px solid white;
+}
+
+
+.customCard img {
+    height: 200px;
+}
