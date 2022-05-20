@@ -24,7 +24,8 @@
     "lint": "eslint . --ext js,jsx,mjs,ts,tsx ",
     "lint:fix": "eslint . --ext js,jsx,mjs,ts,tsx --fix",
     "precommit": "npm run lint:fix",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "format": "prettier --write \"src/**/*.{ts,tsx,json,css,scss}\""
   },
   "repository": {
     "type": "git",
