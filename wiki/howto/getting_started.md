@@ -1,78 +1,71 @@
 # How To Guide
-For getting started with the react-boilerplate you need to follow the following steps :
+For getting started with the micro-frontend-boilerplate you need to follow the following steps :
 
 `Step 1` :  Cloning the repository
 ```
-git clone https://github.com/NeoSOFT-Technologies/frontend-reactjs.git
+git clone https://github.com/NeoSOFT-Technologies/mf-shell.git
 ```
-after the successful run of thē command you will have folder name `frontend-reactjs`
+after the successful run of thē command you will have folder name `mf-shell`
 
-`Step 2` :  Installation of the all packages, dependences and dev-dependences. Go inside the `frontend-reactjs` folder and run :
+`Step 2` :  Installation of the all packages, dependences and dev-dependences. Go inside the each folder `application-shell, authentication-shell, component-shell ` and run :
 ```
 npm install
 ```
+-----------------------------------------------------------------------------or------------------------------------------------------------------------------
 
-after the successful run of thē command you will have folder name `node_modules` inside `frontend-reactjs` folder 
+Double click on `install.sh` file
+
+after the successful run of thē command you will have folder name `node_modules` inside every folder 
 
 Note : if the above command gives you the error you can force the installation by using  `npm install -f`
 
-`Step 3` : Running  the project with this command : 
+`Step 3` :For running the project. Go inside the each folder `application-shell, authentication-shell, component-shell ` and run : : 
 ```
 npm start
 ```
-after the successful run of thē command you will find an output on the browser on port number `3000`
+after the successful run of thē command you will find app shell   output on the browser on port number `3000`
 
-`Step 4` : Now you can add pages and components to your project. For adding pages and components you need to understand the file structure for that you can refer to `README.md` file.
-
-### For adding a component go to `frontend-reactjs/src/components/` and add
+`Step 4`(optional) : Add a micro-forntend for the application by running the below command
 ```
-📂 mycomponent
- |- 📝 MyComponent.tsx
- |- 📝 MyComponent.test.tsx
- |- 📝 MyComponent.scss
+npx create-mf-app
 ```
-## 📝 MyComponent.scss
-This file will contain the custom scss code for the Component.
-## 📝 MyComponent.test.tsx
-This file will contain the test case for the Component for writing testcase refer to `testing.md` in `wiki`.
-## 📝 MyComponent.tsx
-This file will contain the main code and the functionality for the component.
+For more deatils [click Here]()
 
-### For adding a page you have to ensure at which level you want to add the page we have folder segregation as follows :
-Location : `frontend-reactjs/src/pages/features/`
+
+`Step 5` : Now you can add pages  to your project. For adding pages you need to understand the file structure for that you can refer to `README.md` file and under stand how to divide a applcation(horizontally and vertically) into micro-frontends for more info [Click Here]().
+
+### For adding a page you have to ensure the right micro-frontend :
+For Further explaination we procced with an example by adding a `DemoPage` inside `authentication-shell/src/pages/`
+Location : `mf-shell/authentication-shell/src/pages`
 ```
 📂 pages
  |- 📁 login
- |- 📁 registration
- |- 📁 landing
+ |- 📁 register
+ |- 📁 user
 
 ```
-For Further explaination we procced with an example by adding a `DemoPage` inside `frontend-reactjs/src/pages/` 
+ 
 
-`Step 5` : Adding the folder for the page with three files in it as below
+`Step 6` : Adding the folder for the page with two files in it as below
 
 ```
 📂 demopage
- |- 📝 DemoPage.tsx
- |- 📝 DemoPage.test.tsx
- |- 📝 DemoPage.scss
+ |- 📝 DemoPage.jsx
+ |- 📝 DemoPage.css
 ```
-## 📝 DemoPage.scss
+## 📝 DemoPage.css
 This file will contain the custom scss code for the page.
-## 📝 DemoPage.test.tsx
-This file will contain the test case for the page for writing testcase refer to `testing.md` in `wiki`.
-## 📝 DemoPage.tsx
+## 📝 DemoPage.jsx
 This file will contain the main code and the functionality with a basic boilerplate as below
 ```js
 import React, { useEffect } from "react";
 import { useNavigate } from "react-router";
-import Spinner from "realtive path";
-import { useAppDispatch, useAppSelector } from "relative path";
+import Spinner from "component/Spinner";
 import { getCall } from "relative path";
-
+import { useDispatch, useSelector } from "react-redux"
 function DemoPage() {
-  const dispatch = useAppDispatch();
-  const { data, loading, error } = useAppSelector((state) => state.demoPage);
+  const dispatch = useDispatch();
+  const { data, loading, error } = useSelector((state) => state.demoPage);
   const navigate = useNavigate();
   useEffect(() => {
     dispatch(getCall());
@@ -95,30 +88,25 @@ function DemoPage() {
 
 export default DemoPage;
 ```
-
+> use the above structure if there is a axios call on the page esle you can go with the basic structure
 Note : keep in mind about the naming convension for reference check eslint rules in `.eslintrc.json`
 
-`Step 6` : Adding the relative redux-tool-kit slice for the api call and the state management at `frontend-reactjs/src/store/`
+`Step 7`(only if the slice is need) : Adding the relative redux-tool-kit slice for the api call and the state management at `mf-shell/application-shell/src/store/`
 
 considering the example adding a folder for slice at `frontend-reactjs/src/store/` 
 ```
 📂 demo-page
- |- 📝 slice.ts
+ |- 📝 slice.js
 ```
-## 📝 slice.ts
+## 📝 slice.js
 This file will contain the reducer and the middleware logic, for reference how to write slice [click here...](https://redux-toolkit.js.org/introduction/getting-started)
 ```js
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import { getUserData } from "../../../../services";
-import error from "../../utils/error";
+import { getUserData } from "../services/service";
+import error from "../utils/error";
 
-interface DemoPageState {
-  data?: string | null;
-  loading: boolean;
-  error?: string | null;
-}
 
-const initialState: DemoPageState = {
+const initialState = {
   data: undefined,
   loading: false,
   error: undefined,
@@ -142,7 +130,7 @@ const slice = createSlice({
   reducers: {
   //reducer logic here
   },
-  extraReducers(builder): void {
+  extraReducers(builder) {
     builder.addCase(getCall.pending, (state) => {
       state.loading = true;
       state.error = undefined;
@@ -160,7 +148,7 @@ const slice = createSlice({
 
 export default slice.reducer;
 ```
-`Step 7` : Adding the slice in the store index at `frontend-reactjs/src/store/index.ts `
+`Step 8`(only if the slice is need) : Adding the slice in the store index at `mf-shell/application-shell/src/store/index.ts `
 
 ```js
 //import
@@ -175,32 +163,38 @@ const store = configureStore({
   },
 });
 ```
-`Step 8` : Adding the route for the page, For that you have to go to `frontend-reactjs/src/App.tsx `
-
- It is simple to add a common page all you have to do is to import and give the `<Route>` and path for the component,but when it comes to the type specific path you have to wrap the route with an relative authgaurd component.
-
-There are 2 type of authgaurd
-
-- ProtectedGuard : this is a component which wraps around a `<Route>` component to authorize the after  giving correct credentials to access the  specific routes avialable .    
-- UnProtectedGuard : this is a component which wraps around a `<Route>` component is available for the users
-
-
-Check `frontend-reactjs/src/components/auth-gaurd/.tsx ` to learn how authgaurd is working 
-
-Adding Route For DemoPage :
+`Step 9` : Exposing the page through webpack.config.js
+Now under plugin and inside exposes you need to add the page as an object where key is the export name and the value is the location of the page
 ```js
-//import as lazy loading 
-const DemoPage = lazy(
-  () => import("./pages/demopage/DemoPage")
-);
-// inside the admion route segregation add route with admin authgaurd
-
-{/************************ADMIN ROUTES***********************/}
-        <Route
-          path="/demopage"
-           element={authGuard.protect(<DemoPage />, isAutheticated)}
-        />
-{/***********************************************************/}
+exposes: {
+        "./Login": "./src/pages/login/Login.jsx",
+        "./Register": "./src/pages/register/Register.jsx",
+        "./Users": "./src/pages/users/Users.jsx",
+        "./UserDetails": "./src/pages/users/UserDetails.jsx",
+        "./Demopage": "./src/pages/demopage/Demopage.jsx",
+      },
 ```
-
-
+`Step 10` : Re-Build the application by stop the current `npm start` and re-run command
+```
+npm start
+```
+> check the change in the webpack through `http://localhost:3002/remoteEntry.js`
+`Step 11` : add Routes for the page go AppRoutes.jsx
+location : `mf-shell/application-shell/src/AppRoutes.jsx `
+```js 
+const Demopage = lazy(
+  () => import("authentication/Demopage")
+);
+.
+.
+.
+<Route path="/" element={<HomePageLayout />}>
+          <Route path="" element={<Home/>}/>
+          <Route path="users" element={<Users />} />
+          <Route path="users/:id" element={<UserDetails />} />
+          <Route path="demopage" element={<Demopage />} />
+</Route>
+.
+.
+```
+>for full screen layout add this outside HomePageLayout route

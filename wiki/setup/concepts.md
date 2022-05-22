@@ -101,21 +101,12 @@ The Redux core library is deliberately unopinionated. It lets you decide how you
    d.query   
    e.request body
 
-## 10.Sass
+## 10.Css
 
-   a. preprocessing
-   b. using variables
-   c. nesting
-   d. partials
-   e. modules
-   f. extend/inheritance
-   g. operators
-   h. mixins
+   Cascading Style Sheets is a style sheet language used for describing the presentation of a document written in a markup language such as HTML. CSS is a cornerstone technology of the World Wide Web, alongside HTML and JavaScript.
 
 ## 11. React-toastify :-
    The React-Toastify package allows the developer to show toasts to display a message and piece of information to the user for a certain period of time.
-## 12. Reuseable Components :- 
-   (These components are like a template which can be used multiple times in our project and used with props to pass data into it.)
 
 ## 13. Environmental files :- 
    (these files are used to store sensitive data like certain tokens and PORT numbers, connection links ,etc.)
@@ -140,50 +131,58 @@ The Redux core library is deliberately unopinionated. It lets you decide how you
    package-link :- https://www.npmjs.com/package/bootstrap<br/>
    docs :- https://getbootstrap.com/docs/5.1/getting-started/introduction/<br/>
 
-3. "compass-mixins": This is a repository to pull SASS style sheets on Bower, and enjoy the compass mixins by using libsass for faster compilation.<br/>
-   package-link :- https://www.npmjs.com/package/compass-mixins<br/>
-   docs :-  https://github.com/Igosuki/compass-mixins#readme<br/>
 
-4. "node-sass": Node-sass is a library that provides binding for Node.js to LibSass, the C version of the popular stylesheet preprocessor, Sass.
-                It allows you to natively compile .scss files to css at incredible speed and automatically via a connect middleware.<br/>
-   package-link :- https://www.npmjs.com/package/node-sass<br/>
-   docs :- https://github.com/sass/node-sass<br/>
-
-5. "react": The react package contains only the functionality necessary to define React components. It is typically used together
+3. "react": The react package contains only the functionality necessary to define React components. It is typically used together
             with a React renderer like react-dom for the web, or react-native for the native environments.<br/>
    package-link :- https://www.npmjs.com/package/react<br/>
    docs :- https://reactjs.org/<br/>
 
-6. "react-bootstrap": React-Bootstrap replaces the Bootstrap JavaScript. Each component has been built from scratch as a true React component,
+3. "react-bootstrap": React-Bootstrap replaces the Bootstrap JavaScript. Each component has been built from scratch as a true React component,
                    without unneeded dependencies like jQuery.<br/>
    package-link :- https://www.npmjs.com/package/react-bootstrap<br/>
    docs :- https://react-bootstrap.github.io/<br/>
 
-7. "react-dom": This package serves as the entry point to the DOM and server renderers for React. 
+5. "react-dom": This package serves as the entry point to the DOM and server renderers for React. 
                It is intended to be paired with the generic React package, which is shipped as react to npm.<br/>
    package-link :- https://www.npmjs.com/package/react-dom<br/>
    docs :- https://reactjs.org/<br/>
 
-8. "react-redux": React Redux is the official React UI bindings layer for Redux. 
+6. "react-redux": React Redux is the official React UI bindings layer for Redux. 
                   It lets your React components read data from a Redux store, and dispatch actions to the store to update state.<br/>
    package-link :- https://www.npmjs.com/package/react-redux<br/>
    docs :- https://github.com/reduxjs/react-redux, https://react-redux.js.org/<br/>
 
-9. "react-router-dom": React Router is a fully-featured client and server-side routing library for React, 
+7. "react-router-dom": React Router is a fully-featured client and server-side routing library for React, 
                      a JavaScript library for building user interfaces. React Router runs anywhere React runs                     
                      on the web, on the server with node.js, and on React Native.<br/>
    package-link :- https://www.npmjs.com/package/react-router-dom<br/>
    docs :- https://github.com/remix-run/react-router#readme , https://reactrouter.com/<br/>
 
-10. "react-scripts": This package includes scripts and configuration used by Create React App.
+8. "react-scripts": This package includes scripts and configuration used by Create React App.
                      Please refer to its documentation<br/>
    package-link :- https://www.npmjs.com/package/react-scripts<br/>
    docs :- https://create-react-app.dev/<br/>
 
-11. "react-toastify": React-Toastify allows you to add notifications to your app with ease.<br/>
+9. "react-toastify": React-Toastify allows you to add notifications to your app with ease.<br/>
    package-link :- https://www.npmjs.com/package/react-toastify<br/>
    docs :- https://github.com/fkhadra/react-toastify#readme, https://fkhadra.github.io/react-toastify/introduction/<br/>
 
-12. "redux-toolkit": Redux Toolkit allows you to Store the data in a centralized store along with providing the middleware required for making APi Calls.<br/>
+10. "redux-toolkit": Redux Toolkit allows you to Store the data in a centralized store along with providing the middleware required for making APi Calls.<br/>
 package-link :- https://www.npmjs.com/package/@reduxjs/toolkit<br/>
 docs :- https://redux-toolkit.js.org/<br/>
+
+11. "rxjs" : Reactive Extensions Library for JavaScript. This is a rewrite of Reactive-Extensions/RxJS and is the latest production-ready version of RxJS. This rewrite is meant to have better performance, better modularity, better debuggable call stacks, while staying mostly backwards compatible, with some breaking changes that reduce the API surface.<br/>
+package-link :- https://www.npmjs.com/package/rxjs<br/>
+docs :- https://github.com/reactivex/rxjs/<br/>
+
+12. "babel" :Babel is a toolchain that is mainly used to convert ECMAScript 2015+ code into a backwards compatible version of JavaScript in current and older browsers or environments. Here are the main things Babel can do for you:
+
+- Transform syntax
+- Polyfill features that are missing in your target environment (through a third-party polyfill such as core-js)
+- Source code transformations (codemods)
+package-link :- https://www.npmjs.com/package/@babel/runtime<br/>
+docs :- https://github.com/babel/babel<br/>
+
+13. "webpack" : Webpack is a module bundler. Its main purpose is to bundle JavaScript files for usage in a browser, yet it is also capable of transforming, bundling, or packaging just about any resource or asset.<br/>
+package-link :- https://www.npmjs.com/package/webpack<br/>
+docs :- https://github.com/webpack/webpack<br/>
