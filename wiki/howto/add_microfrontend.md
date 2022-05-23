@@ -56,7 +56,7 @@ location : `mf-shell/application-shell/webpack.config.js`
   remotes: {
         application: "application_shell@http://localhost:3000/remoteEntry.js",
         component: "component_shell@http://localhost:3001/remoteEntry.js",
-        authentication: "authentication_shell@http://localhost:3002/remoteEntry.js"
+        authentication: "authentication_shell@http://localhost:3002/remoteEntry.js",
         demo: "demo@http://localhost:1234/remoteEntry.js"
       },
  ```
