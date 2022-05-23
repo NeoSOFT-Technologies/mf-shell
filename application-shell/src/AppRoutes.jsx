@@ -1,23 +1,25 @@
-import React from "react";
+import React, { lazy, Suspense } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Login from "authentication/Login";
-import Register from "authentication/Register";
-import HomePageLayout from "./HomePageLayout";
-import Users from "authentication/Users";
-import Home from "authentication/Home";
-import UserDetails from "authentication/UserDetails";
+const Login = lazy(() => import("authentication/Login"));
+const Register = lazy(() => import("authentication/Register"));
+const HomePageLayout = lazy(() => import("./HomePageLayout"));
+const Home = lazy(() => import("component/Home"));
+const Users = lazy(() => import("authentication/Users"));
+const UserDetails = lazy(() => import("authentication/UserDetails"));
 export default function AppRoutes() {
   return (
-    <Router>
-      <Routes>
-        <Route path="/login" element={<Login />} />
-        <Route path="/signup" element={<Register />} />
-        <Route path="/" element={<HomePageLayout />}>
-          <Route path="" element={<Home/>}/>
-          <Route path="users" element={<Users />} />
-          <Route path="users/:id" element={<UserDetails />} />
-        </Route>
-      </Routes>
-    </Router>
+    <Suspense fallback={"Loading"}>
+      <Router>
+        <Routes>
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
+          <Route path="/" element={<HomePageLayout />}>
+            <Route path="" element={<Home />} />
+            <Route path="users" element={<Users />} />
+            <Route path="users/:id" element={<UserDetails />} />
+          </Route>
+        </Routes>
+      </Router>
+    </Suspense>
   );
 }

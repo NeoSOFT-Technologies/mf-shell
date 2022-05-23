@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Navbar, Container, Nav, Button } from "react-bootstrap";
 import { useNavigate, Link } from "react-router-dom";
+
 export default function Header() {
   const navigate = useNavigate();
   const [logInCheck, setLogInCheck] = useState(false);
@@ -71,10 +72,10 @@ export default function Header() {
               variant="dark"
               className="me-3"
               onClick={() => {
-                navigate("/signup");
+                navigate("/register");
               }}
             >
-              Sign Up
+              Register
             </Button>
           </>
         )}
