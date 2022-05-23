@@ -50,11 +50,10 @@ module.exports = {
         authentication: "authentication_shell@http://localhost:3002/remoteEntry.js"
       },
       exposes: {
-        "./Login": "./src/authenticate/login/Login.jsx",
-        "./Register": "./src/authenticate/register/Register.jsx",
-        "./Users": "./src/authenticate/users/Users.jsx",
-        "./UserDetails": "./src/authenticate/users/UserDetails.jsx",
-        "./Home": "./src/unauthorized/Home.jsx",
+        "./Login": "./src/pages/login/Login.jsx",
+        "./Register": "./src/pages/register/Register.jsx",
+        "./Users": "./src/pages/users/Users.jsx",
+        "./UserDetails": "./src/pages/users/UserDetails.jsx",
       },
       shared: {
         ...deps,

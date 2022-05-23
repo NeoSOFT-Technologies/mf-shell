@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { getHomeData } from '../services/service'
+import { getHomeData } from '../../../../authentication-shell/src/services/service'
 
 export default function () {
     const [data, setData] = useState();
