@@ -17,7 +17,7 @@ Double click on `install.sh` file
 
 after the successful run of thē command you will have folder name `node_modules` inside every folder 
 
-Note : if the above command gives you the error you can force the installation by using  `npm install -f`
+>Note : if the above command gives you the error you can force the installation by using  `npm install -f`
 
 `Step 3` :For running the project. Go inside the each folder `application-shell, authentication-shell, component-shell ` and run : : 
 ```
@@ -89,7 +89,7 @@ function DemoPage() {
 export default DemoPage;
 ```
 > use the above structure if there is a axios call on the page esle you can go with the basic structure
-Note : keep in mind about the naming convension for reference check eslint rules in `.eslintrc.json`
+>Note : keep in mind about the naming convension for reference check eslint rules in `.eslintrc.json`
 
 `Step 7`(only if the slice is need) : Adding the relative redux-tool-kit slice for the api call and the state management at `mf-shell/application-shell/src/store/`
 
