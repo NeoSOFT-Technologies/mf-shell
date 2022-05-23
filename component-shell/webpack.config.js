@@ -52,7 +52,6 @@ module.exports = {
         "./Header": "./src/components/header/Header.jsx",
         "./Footer": "./src/components/footer/Footer.jsx",
         "./Home": "./src/components/home/Home.jsx",
-        "./ToastAlert": "./src/components/react-toast-alert/react-toast-alert.js"
       },
       shared: {
         ...deps,

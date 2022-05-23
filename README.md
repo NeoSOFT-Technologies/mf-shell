@@ -23,10 +23,10 @@ Try it!! I am happy to hear your feedback or any kind of new features.
   ### Instant feedback
   Enjoy the best DX (Developer eXperience) and code your app at the speed of thought! Your saved changes to the JS are reflected instantaneously without refreshing the page. Preserve application state even when you update something in the underlying code!
 
-  ### Integrated Redux Toolkit
-  Makes easier to write good redux applications and speeds up development.
+  ### Error boundary
+Error boundaries are React components that catch JavaScript errors anywhere in their child component tree, log those errors, and display a fallback UI instead of the component tree that crashed.
 
-- [Learn more about redux-toolkit](https://github.com/NeoSOFT-Technologies/frontend-reactjs/blob/main/wiki/modules/redux-toolkit.md)
+- [Learn more about Erroe Boundary]([https://github.com/NeoSOFT-Technologies/frontend-reactjs/blob/main/wiki/modules/redux-toolkit.md](https://reactjs.org/docs/error-boundaries.html))
   
 
 ### Based on JavaScript
@@ -78,12 +78,11 @@ Below is a list of all the scripts this template has available:
 | Npm Script | Description  |
 | ------------------------- | ------------------------------------------------------------------------------------------------- |
 | `build`                   | Full build. Runs ALL build tasks |
-| `build:prod`                   | Full production build. Runs ALL build tasks |
-| `start:dev`                   | Run the application in dev mode                                       |
-| `build:css`                   | Build the css for production environment                                         |
+|`build:dev`                | build in mode development|
+|`build:start`              |run the static dist build|
 | `lint`                    | Runs ESLint on project files                                                                      |
-| `lint:fix`                    | Runs ESLint on project files and fixed the auto fix issues                                                                     |
-| `format`             | Runs the file formatter                                                              |
+| `lint:fix`                | Runs ESLint on project files and fixed the auto fix issues                                                                     |
+| `format`                  | Runs the file formatter                                                              |
 
 
 
@@ -106,7 +105,7 @@ Below is a list of all the scripts this template has available:
 | **authentication-shell/src/utils/api**                         | 	Contains the API Factory   |
 | **component-shell**                         | 	Contains the Components like header, footer  |
 | **wiki/**                         | You can add project documentation and insructions file here |
-| **webpack.config.js                    | config file for micro-frontend  |
+| **webpack.config.js**                   | config file for micro-frontend  |
 | .dockerignore                        | Config to ignore file during the build process  |
 | install.sh                        | code toinstall all dependences in a single run  |
 | docker-compose.yml                       | Config file for docker build  |
@@ -124,16 +123,14 @@ Below is a list of all the scripts this template has available:
 - [Concepts](https://github.com/NeoSOFT-Technologies/frontend-reactjs/blob/main/wiki/setup/concepts.md)
 - [Getting started /Installation](https://github.com/NeoSOFT-Technologies/frontend-reactjs/blob/main/wiki/howto/getting_started.md)
 - [How to create components]()
-- [Redux Toolkit Flow of implementation]()
 - [Unit Test cases]()
 - [How to implement]()
 - [API Factory]()
 
 ## Video Tutorials
-- [Concepts](https://github.com/NeoSOFT-Technologies/frontend-reactjs/blob/main/wiki/setup/concepts.md)
-- [Getting started /Installation](https://github.com/NeoSOFT-Technologies/frontend-reactjs/blob/main/wiki/howto/getting_started.md)
-- [How to create components]()
-- [Redux Toolkit Flow of implementation]()
-- [Unit Test cases]()
-- [How to implement]()
+- [Concepts](https://www.youtube.com/watch?v=w58aZjACETQ)
+- [Getting started /Installation](https://www.youtube.com/watch?v=lKKsjpH09dU&t=4541s)
+- [How to create components](https://www.youtube.com/watch?v=lKKsjpH09dU&t=4541s)
+- [Unit Test cases](https://www.youtube.com/watch?v=lKKsjpH09dU&t=4541s)
+- [How to implement](https://www.youtube.com/watch?v=s_Fs4AXsTnA)
 - [API Factory]()

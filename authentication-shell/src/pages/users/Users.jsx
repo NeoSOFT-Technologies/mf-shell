@@ -4,12 +4,12 @@ import { Card, Col, Row } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 import "./users.css";
 import "../../index.css";
-
 export default function Users() {
     const navigate = useNavigate();
     const [users, setUsers] = useState([]);
 
     useEffect(() => {
+
         getUser().then((res) => {
             console.log(res.data);
             setUsers(res.data);
@@ -49,7 +49,6 @@ export default function Users() {
                                     >
                                         Details
                                     </button>
-                                    {/* <button className='forgetPassword'>learn More</button> */}
                                 </Card.Body>
                             </Card>
                         </Col>

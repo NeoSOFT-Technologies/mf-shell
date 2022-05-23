@@ -5,8 +5,6 @@ import "../../index.css";
 import { useNavigate } from "react-router-dom";
 import { login } from "../../services/service";
 // import { loginCall, jwt } from "../../services/service";
-import { toast } from "react-toastify";
-import ToastAlert from "component/ToastAlert";
 import { regexForEmail, regexForPassword } from "../../resources/constants";
 
 export default function Login() {
@@ -54,11 +52,11 @@ export default function Login() {
           navigate("/");
         });
       } else {
-        ToastAlert("Please Enter Valid Details", "warning");
+        // ToastAlert("Please Enter Valid Details", "warning");
         console.log("Please Enter Valid Details", "warning");
       }
     } else {
-      ToastAlert("Please Fill All Fields", "warning");
+      // ToastAlert("Please Fill All Fields", "warning");
       console.log("Please Fill All Fields", "warning");
     }
   };
