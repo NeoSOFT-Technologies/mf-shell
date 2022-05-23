@@ -62,7 +62,13 @@ npm install
 - Start the application 
 ```
 npm start
+``` 
+## Backend 
+- Clone the repository 
 ```
+git clone [https://github.com/NeoSOFT-Technologies/mf-shell.git](https://github.com/NeoSOFT-Technologies/rest-node-nestjs)
+```
+[learn more](https://github.com/NeoSOFT-Technologies/rest-node-nestjs)
 
 ### Running the build
 
@@ -120,11 +126,11 @@ Below is a list of all the scripts this template has available:
 
   
 ## Training 
-- [Concepts](https://github.com/NeoSOFT-Technologies/frontend-reactjs/blob/main/wiki/setup/concepts.md)
-- [Getting started /Installation](https://github.com/NeoSOFT-Technologies/frontend-reactjs/blob/main/wiki/howto/getting_started.md)
-- [How to create components]()
-- [Unit Test cases]()
-- [How to implement]()
+- [Concepts](https://github.com/NeoSOFT-Technologies/mf-shell/blob/main/wiki/setup/concepts.md)
+- [Getting started /Installation](https://github.com/NeoSOFT-Technologies/mf-shell/blob/main/wiki/howto/getting_started.md)
+- [How to create Micro-Frontend](https://github.com/NeoSOFT-Technologies/mf-shell/blob/main/wiki/howto/add_microfrontend.md)
+- [Unit Test cases](https://github.com/NeoSOFT-Technologies/mf-shell/blob/mian/wiki/testing/unit-testing.md)
+- [How to implement](https://github.com/NeoSOFT-Technologies/mf-shell/mian/wiki/howto/horizontal%26vertical_break.md)
 - [API Factory]()
 
 ## Video Tutorials
