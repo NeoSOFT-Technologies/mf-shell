@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Navbar, Container, Nav, Button } from "react-bootstrap";
 import { useNavigate, Link } from "react-router-dom";
+
 export default function Header() {
   const navigate = useNavigate();
   const [logInCheck, setLogInCheck] = useState(false);
@@ -29,16 +30,14 @@ export default function Header() {
             <Link to="/" className="nav-link">
               Home
             </Link>
-            <Nav.Link>About</Nav.Link>
-            {logInCheck && (<>
-              <Link to="/users" className="nav-link">
-                Users
-              </Link>
-              <Link to="/profile" className="nav-link">
-                Profile
-              </Link>
-            </>
+            {logInCheck && (
+              <>
+                <Link to="/users" className="nav-link">
+                  Users
+                </Link>
+              </>
             )}
+            <Nav.Link>About</Nav.Link>
           </Nav>
         </Container>
         {logInCheck ? (
@@ -70,10 +69,10 @@ export default function Header() {
               variant="dark"
               className="me-3"
               onClick={() => {
-                navigate("/signup");
+                navigate("/register");
               }}
             >
-              Sign Up
+              Register
             </Button>
           </>
         )}

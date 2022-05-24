@@ -16,12 +16,21 @@ export default function Login() {
     const { name, value } = event.target;
     switch (name) {
       case "email":
-        setFormError({ ...formError, email: regexForEmail.test(value) ? "" : "Enter a Valid Email", });
+        setFormError({
+          ...formError,
+          email: regexForEmail.test(value) ? "" : "Enter a Valid Email",
+        });
         break;
       case "password":
-        setFormError({ ...formError, password: regexForPassword.test(value) ? "" : "Enter a Valid Password must contains minimum one Number,uppercase,lowercase,special Character (8-15).", });
+        setFormError({
+          ...formError,
+          password: regexForPassword.test(value)
+            ? ""
+            : "Enter a Valid Password must contains minimum one Number,uppercase,lowercase,special Character (8-15).",
+        });
         break;
-      default: break;
+      default:
+        break;
     }
     setFormData({ ...formData, [name]: value });
   };
@@ -38,8 +47,10 @@ export default function Login() {
     if (!handleFormEmpty()) {
       if (handleFormValidate()) {
         console.log(formData);
-        // 
-        login(formData).then(() => { navigate("/") })
+        //
+        login(formData).then(() => {
+          navigate("/");
+        });
       } else {
         // ToastAlert("Please Enter Valid Details", "warning");
         console.log("Please Enter Valid Details", "warning");
@@ -99,10 +110,10 @@ export default function Login() {
             className="forgetPassword"
             type="button"
             onClick={() => {
-              navigate("/signup");
+              navigate("/register");
             }}
           >
-            SignUp
+            Register
           </button>
         </p>
       </Form>

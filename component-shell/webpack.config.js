@@ -27,7 +27,7 @@ module.exports = {
       },
       {
         test: /\.(css|s[ac]ss)$/i,
-        use: ["style-loader", "css-loader", "postcss-loader"],
+        use: ["source-map-loader", "style-loader", "css-loader", "postcss-loader"],
       },
       {
         test: /\.(ts|tsx|js|jsx)$/,
@@ -49,8 +49,9 @@ module.exports = {
         authentication: "authentication_shell@http://localhost:3002/remoteEntry.js"
       },
       exposes: {
-        "./Header": "./src/components/Header.jsx",
-        "./Footer": "./src/components/Footer.jsx"
+        "./Header": "./src/components/header/Header.jsx",
+        "./Footer": "./src/components/footer/Footer.jsx",
+        "./Home": "./src/components/home/Home.jsx",
       },
       shared: {
         ...deps,

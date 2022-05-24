@@ -1,23 +1,26 @@
-import React from "react";
+import React, { lazy, Suspense } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Login from "authentication/Login";
-import Register from "authentication/Register";
-import HomePageLayout from "./HomePageLayout";
-// import Home from "Home/Home"
-import User from "authentication/User";
-import Profile from "authentication/Profile";
+const Login = lazy(() => import("authentication/Login"));
+const Register = lazy(() => import("authentication/Register"));
+const HomePageLayout = lazy(() => import("./HomePageLayout"));
+const Home = lazy(() => import("component/Home"));
+const Users = lazy(() => import("authentication/Users"));
+const UserDetails = lazy(() => import("authentication/UserDetails"));
+import { PageErrorBounday } from "./errorboundaries/PageErrorBoundary";
 export default function AppRoutes() {
   return (
-    <Router>
-      <Routes>
-        <Route path="/login" element={<Login />} />
-        <Route path="/signup" element={<Register />} />
-        <Route path="/" element={<HomePageLayout />}>
-          {/* <Route path="" element={<Home/>}/> */}
-          <Route path="profile" element={<Profile />} />
-          <Route path="users" element={<User />} />
-        </Route>
-      </Routes>
-    </Router>
+    <Suspense fallback={"Loading"}>
+      <Router>
+        <Routes>
+          <Route path="/login" element={<PageErrorBounday><Login /></PageErrorBounday>} />
+          <Route path="/register" element={<PageErrorBounday><Register /></PageErrorBounday>} />
+          <Route path="/" element={<HomePageLayout />}>
+            <Route path="" element={<PageErrorBounday><Home /></PageErrorBounday>} />
+            <Route path="users" element={<PageErrorBounday><Users /></PageErrorBounday>} />
+            <Route path="users/:id" element={<PageErrorBounday><UserDetails /></PageErrorBounday>} />
+          </Route>
+        </Routes>
+      </Router>
+    </Suspense>
   );
 }

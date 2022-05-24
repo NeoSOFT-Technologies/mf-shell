@@ -1,16 +1,23 @@
 import React from "react";
-import Header from "component/Header";
-import Footer from "component/Footer";
+const Header = React.lazy(() => import('component/Header'));
+const Footer = React.lazy(() => import('component/Footer'));
+// import Header from "component/Header";
+// import Footer from "component/Footer";
 import { Outlet } from "react-router-dom";
 import "./index.css";
+import { AsyncLoader } from "./errorboundaries/ComponentErrorBoundary";
 export default function HomePageLayout() {
   return (
     <>
-      <Header />
+      <AsyncLoader>
+        <Header />
+      </AsyncLoader>
       <div className="homeArea">
         <Outlet />
       </div>
-      <Footer />
+      <AsyncLoader>
+        <Footer />
+      </AsyncLoader>
     </>
   );
 }
