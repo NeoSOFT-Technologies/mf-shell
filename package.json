@@ -23,9 +23,10 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "eslint . --ext js,jsx,mjs,ts,tsx ",
     "lint:fix": "eslint . --ext js,jsx,mjs,ts,tsx --fix",
-    "precommit": "npm run lint:fix",
+    "precommit": "npm run lint && npm run lint:fix && npm run format",
     "prepare": "husky install",
-    "format": "prettier --write \"src/**/*.{ts,tsx,json,css,scss}\""
+    "prepush": "npm run lint",
+    "format": "prettier --write \"src/**/*.{js,jsx,json,css,scss}\""
   },
   "repository": {
     "type": "git",
