@@ -1,5 +1,5 @@
 import React from "react";
-import Loading from "../loading/Loading";
+import Loading from "../components/loading/Loading";
 
 export const PageErrorBounday = ({ children }) => {
   return (

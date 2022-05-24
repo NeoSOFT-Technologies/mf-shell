@@ -15,11 +15,3 @@ services:
     container_name: 'authentication-shell'
     ports:
       - '3002:3002'
-
-  component-shell:
-    build: 
-      context: ./component-shell
-      dockerfile: Dockerfile
-    container_name: 'component-shell'
-    ports:
-      - '3001:3001'

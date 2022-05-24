@@ -33,12 +33,11 @@ class ErrorBoundary extends React.Component {
   render() {
     if (this.state.hasError) {
       return (
-        <div className="text-center">
+        <div className='text-center'>
           <div className="spinner-border text-danger" role="status">
             <span className="visually-hidden">Loading...</span>
           </div>
-        </div>
-      );
+        </div>);
     }
 
     return this.props.children;

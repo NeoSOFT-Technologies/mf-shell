@@ -4,7 +4,7 @@ import { PageErrorBounday } from "./errorboundaries/PageErrorBoundary";
 const Login = lazy(() => import("authentication/Login"));
 const Register = lazy(() => import("authentication/Register"));
 const HomePageLayout = lazy(() => import("./HomePageLayout"));
-const Home = lazy(() => import("component/Home"));
+const Home = lazy(() => import("application/Home"));
 const Users = lazy(() => import("authentication/Users"));
 const UserDetails = lazy(() => import("authentication/UserDetails"));
 export default function AppRoutes() {

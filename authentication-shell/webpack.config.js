@@ -46,7 +46,7 @@ module.exports = {
       filename: "remoteEntry.js",
       remotes: {
         application: "application_shell@http://localhost:3000/remoteEntry.js",
-        component: "component_shell@http://localhost:3001/remoteEntry.js",
+        // component: "component_shell@http://localhost:3001/remoteEntry.js",
         authentication: "authentication_shell@http://localhost:3002/remoteEntry.js"
       },
       exposes: {
