@@ -81,7 +81,7 @@ export default function Login() {
             className="inputfields"
             value={formData.email}
             onChange={handleInputChange}
-          // required
+            // required
           />
         </Form.Group>
         <Form.Group className="mb-3" controlId="formBasicPassword">
@@ -92,7 +92,7 @@ export default function Login() {
             className="inputfields"
             value={formData.password}
             onChange={handleInputChange}
-          // required
+            // required
           />
         </Form.Group>
         <Form.Group className="mb-3" controlId="formBasicCheckbox">

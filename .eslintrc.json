@@ -30,6 +30,7 @@
               "endOfLine": "auto"
             }],
           "semi": ["error", "always"],
+          "react/prop-types":"off",
           "object-curly-spacing": ["error", "always"],
           "camelcase": "off",
           "no-underscore-dangle": "off",
