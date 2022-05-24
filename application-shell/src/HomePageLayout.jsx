@@ -12,6 +12,7 @@ export default function HomePageLayout() {
       <AsyncLoader>
         <Header />
       </AsyncLoader>
+
       <div className="homeArea">
         <Outlet />
       </div>
