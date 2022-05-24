@@ -11,7 +11,9 @@ export default function Home() {
 
   return (
     <div>
-      <h1 className="text-white text-center">Boiler-plate for micro frontend </h1>
+      <h1 className="text-white text-center">
+        Boiler-plate for micro frontend{" "}
+      </h1>
       {data && <h1>{data}</h1>}
     </div>
   );
