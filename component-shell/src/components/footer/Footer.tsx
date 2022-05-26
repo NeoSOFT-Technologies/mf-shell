@@ -1,8 +1,10 @@
 import React from "react";
+import "bootstrap/dist/css/bootstrap.min.css";
 import { Navbar, Container, Nav } from "react-bootstrap";
 export default function Footer() {
   return (
     <>
+      {/* @ts-ignore */}
       <Navbar bg="light" variant="light" sticky="bottom">
         <Container>
           <Navbar.Brand>NeoSoft</Navbar.Brand>

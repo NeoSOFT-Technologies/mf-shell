@@ -1,6 +1,6 @@
-import apiFactory from "../utils/api";
 import { BehaviorSubject } from "rxjs";
-export const jwt = new BehaviorSubject();
+import apiFactory from "../utils/api";
+export const jwt = new BehaviorSubject(undefined);
 
 export const login = async (data) => {
   const res = await apiFactory().post("/auth/generateToken", data);
@@ -25,6 +25,6 @@ export const getHomeData = async () => {
   console.log(res.data);
   return res.data;
 };
-export async function getProfile(token) {
+export async function getProfile() {
   return apiFactory().get("/authorized");
 }

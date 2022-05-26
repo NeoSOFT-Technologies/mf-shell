@@ -1,11 +1,10 @@
 const HtmlWebPackPlugin = require("html-webpack-plugin");
 const ModuleFederationPlugin = require("webpack/lib/container/ModuleFederationPlugin");
-const Dotenv = require('dotenv-webpack');
 
 const deps = require("./package.json").dependencies;
 module.exports = {
   output: {
-    publicPath: "http://localhost:3002/",
+    publicPath: "http://localhost:3001/",
   },
 
   resolve: {
@@ -13,7 +12,7 @@ module.exports = {
   },
 
   devServer: {
-    port: 3002,
+    port: 3001,
     historyApiFallback: true,
   },
 
@@ -44,16 +43,12 @@ module.exports = {
     new ModuleFederationPlugin({
       name: "authentication_shell",
       filename: "remoteEntry.js",
-      remotes: {
-        application: "application_shell@http://localhost:3000/remoteEntry.js",
-        // component: "component_shell@http://localhost:3001/remoteEntry.js",
-        authentication: "authentication_shell@http://localhost:3002/remoteEntry.js"
-      },
+      remotes: {},
       exposes: {
-        "./Login": "./src/pages/login/Login.jsx",
-        "./Register": "./src/pages/register/Register.jsx",
-        "./Users": "./src/pages/users/Users.jsx",
-        "./UserDetails": "./src/pages/users/UserDetails.jsx",
+        "./Login": "./src/pages/login/Login.tsx",
+        "./Register": "./src/pages/register/Register.tsx",
+        "./Users": "./src/pages/users/Users.tsx",
+        "./UserDetails": "./src/pages/user-details/UserDetails.tsx",
       },
       shared: {
         ...deps,
@@ -70,6 +65,5 @@ module.exports = {
     new HtmlWebPackPlugin({
       template: "./src/index.html",
     }),
-    new Dotenv(),
   ],
 };

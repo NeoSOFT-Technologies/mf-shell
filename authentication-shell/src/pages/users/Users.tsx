@@ -1,9 +1,8 @@
 import React, { useEffect, useState } from "react";
-import { getUser } from "../../services/service";
 import { Card, Col, Row } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
+import { getUser } from "../../services/service";
 import "./users.css";
-import "../../index.css";
 export default function Users() {
   const navigate = useNavigate();
   const [users, setUsers] = useState([]);

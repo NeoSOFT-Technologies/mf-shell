@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { Navbar, Container, Nav, Button } from "react-bootstrap";
 import { useNavigate, Link } from "react-router-dom";
-
+import "bootstrap/dist/css/bootstrap.min.css";
 export default function Header() {
   const navigate = useNavigate();
   const [logInCheck, setLogInCheck] = useState(false);
   useEffect(() => {
+    console.log("test");
     if (sessionStorage.getItem("_token")) {
       setLogInCheck(true);
     } else {

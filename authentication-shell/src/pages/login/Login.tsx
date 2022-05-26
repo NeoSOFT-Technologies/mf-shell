@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import { Form, Button } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
-import "../../index.css";
+import "./login.css";
 import { useNavigate } from "react-router-dom";
+import { regexForEmail, regexForPassword } from "../../resources/constants";
 import { login } from "../../services/service";
 // import { loginCall, jwt } from "../../services/service";
-import { regexForEmail, regexForPassword } from "../../resources/constants";
 
 export default function Login() {
   const navigate = useNavigate();
@@ -52,23 +52,13 @@ export default function Login() {
           navigate("/");
         });
       } else {
-        // ToastAlert("Please Enter Valid Details", "warning");
         console.log("Please Enter Valid Details", "warning");
       }
     } else {
-      // ToastAlert("Please Fill All Fields", "warning");
       console.log("Please Fill All Fields", "warning");
     }
   };
-  // const validate = (event) => {
-  //   event.preventDefault();
-  //   loginCall(username, password).then(() => {
-  //     sessionStorage.setItem("_token", jwt.value);
-  //     setTimeout(() => {
-  //       navigate("/");
-  //     }, 200);
-  //   });
-  // };
+
   return (
     <div className="centerMe bggrading">
       <Form className="w-40 glassbg  p-4 " onSubmit={handleFormSubmit}>

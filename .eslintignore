@@ -1,2 +1,4 @@
-.config.js
+
+// .eslintignore
 node_modules/*
+webpack.config.js

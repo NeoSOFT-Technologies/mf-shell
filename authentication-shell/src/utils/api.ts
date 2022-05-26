@@ -1,4 +1,6 @@
 import axios from "axios";
+// import dotenv from "dotenv";
+// dotenv.config();
 
 const getDefaultPath = () => {
   return process.env.API_BASE_URL || "https://localhost:5000/";
