@@ -27,6 +27,7 @@ export default function Users() {
               <Card className="customCard">
                 <Card.Img
                   variant="top"
+                  data-testid="test-btn"
                   src={`https://picsum.photos/200?=${i}`}
                 />
                 <Card.Body>
@@ -43,6 +44,7 @@ export default function Users() {
                   </Card.Text>
                   <button
                     className="forgetPassword"
+                    data-testid="forgetpassword-btn"
                     onClick={() => handleUserNavigate(val.id)}
                   >
                     Details

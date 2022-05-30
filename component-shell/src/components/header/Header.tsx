@@ -6,7 +6,7 @@ export default function Header() {
   const navigate = useNavigate();
   const [logInCheck, setLogInCheck] = useState(false);
   useEffect(() => {
-    console.log("test");
+    // console.log("test");
     if (sessionStorage.getItem("_token")) {
       setLogInCheck(true);
     } else {
@@ -57,6 +57,7 @@ export default function Header() {
             <Button
               size="sm"
               variant="dark"
+              data-testid="login-Btn"
               className="me-3"
               onClick={() => {
                 navigate("/login");
@@ -67,6 +68,7 @@ export default function Header() {
             <Button
               size="sm"
               variant="dark"
+              data-testid="Register-Btn"
               className="me-3"
               onClick={() => {
                 navigate("/register");

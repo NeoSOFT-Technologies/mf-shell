@@ -29,8 +29,7 @@ export default function Login() {
             : "Enter a Valid Password must contains minimum one Number,uppercase,lowercase,special Character (8-15).",
         });
         break;
-      default:
-        break;
+     
     }
     setFormData({ ...formData, [name]: value });
   };
@@ -61,13 +60,14 @@ export default function Login() {
 
   return (
     <div className="centerMe bggrading">
-      <Form className="w-40 glassbg  p-4 " onSubmit={handleFormSubmit}>
+      <Form className="w-40 glassbg  p-4 " onSubmit={handleFormSubmit} data-testid="form-submit">
         <h1 className="text-center heading ">Login</h1>
         <Form.Group className="mb-3" controlId="formBasicEmail">
           <Form.Label>Email</Form.Label>
           <Form.Control
             type="email"
             name="email"
+            data-testid="email-input"
             className="inputfields"
             value={formData.email}
             onChange={handleInputChange}
@@ -79,6 +79,7 @@ export default function Login() {
           <Form.Control
             type="password"
             name="password"
+            data-testid="password-input"
             className="inputfields"
             value={formData.password}
             onChange={handleInputChange}
@@ -86,9 +87,9 @@ export default function Login() {
           />
         </Form.Group>
         <Form.Group className="mb-3" controlId="formBasicCheckbox">
-          <Form.Check type="checkbox" label="Remember me" />
+          <Form.Check type="checkbox" label="Remember me"  data-testid="checkbox-input"/>
         </Form.Group>
-        <Button className="w-100 inputfields" type="submit">
+        <Button className="w-100 inputfields" type="submit"  data-testid="login-Btn">
           Log In
         </Button>
 
@@ -99,6 +100,7 @@ export default function Login() {
           <button
             className="forgetPassword"
             type="button"
+            data-testid="register-Btn"
             onClick={() => {
               navigate("/register");
             }}
