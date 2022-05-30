@@ -1,12 +1,12 @@
 import axios from "axios";
-// import dotenv from "dotenv";
-// dotenv.config();
+
+const apiBaseUrl = process.env.API_BASE_URL || "https://localhost:5000/";
 
 const getDefaultPath = () => {
-  return process.env.API_BASE_URL || "https://localhost:5000/";
+  return apiBaseUrl;
 };
 
-const transformResponse = (input) => {
+const transformResponse = (input: string) => {
   try {
     return JSON.parse(input);
   } catch {

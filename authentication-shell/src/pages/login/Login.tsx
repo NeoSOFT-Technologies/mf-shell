@@ -43,7 +43,7 @@ export default function Login() {
   const handleFormSubmit = (event) => {
     event.preventDefault();
     if (!handleFormEmpty()) {
-      if (!handleFormValidate()) {
+      if (handleFormValidate()) {
         console.log(formData);
         //
         login(formData).then(() => {

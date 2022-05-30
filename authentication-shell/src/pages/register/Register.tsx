@@ -89,7 +89,7 @@ export default function Register() {
   const handleFormSubmit = (event) => {
     event.preventDefault();
     if (!handleFormEmpty()) {
-      if (!handleFormValidate()) {
+      if (handleFormValidate()) {
         console.log(formData);
         const newFormData = {
           firstName: formData.firstName,
