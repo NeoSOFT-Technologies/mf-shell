@@ -29,7 +29,6 @@ export default function Login() {
             : "Enter a Valid Password must contains minimum one Number,uppercase,lowercase,special Character (8-15).",
         });
         break;
-     
     }
     setFormData({ ...formData, [name]: value });
   };
@@ -44,7 +43,7 @@ export default function Login() {
   const handleFormSubmit = (event) => {
     event.preventDefault();
     if (!handleFormEmpty()) {
-      if (handleFormValidate()) {
+      if (!handleFormValidate()) {
         console.log(formData);
         //
         login(formData).then(() => {
@@ -60,7 +59,11 @@ export default function Login() {
 
   return (
     <div className="centerMe bggrading">
-      <Form className="w-40 glassbg  p-4 " onSubmit={handleFormSubmit} data-testid="form-submit">
+      <Form
+        className="w-40 glassbg  p-4 "
+        onSubmit={handleFormSubmit}
+        data-testid="form-submit"
+      >
         <h1 className="text-center heading ">Login</h1>
         <Form.Group className="mb-3" controlId="formBasicEmail">
           <Form.Label>Email</Form.Label>
@@ -87,9 +90,17 @@ export default function Login() {
           />
         </Form.Group>
         <Form.Group className="mb-3" controlId="formBasicCheckbox">
-          <Form.Check type="checkbox" label="Remember me"  data-testid="checkbox-input"/>
+          <Form.Check
+            type="checkbox"
+            label="Remember me"
+            data-testid="checkbox-input"
+          />
         </Form.Group>
-        <Button className="w-100 inputfields" type="submit"  data-testid="login-Btn">
+        <Button
+          className="w-100 inputfields"
+          type="submit"
+          data-testid="login-Btn"
+        >
           Log In
         </Button>
 

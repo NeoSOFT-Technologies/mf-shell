@@ -27,7 +27,7 @@ export default function Users() {
               <Card className="customCard">
                 <Card.Img
                   variant="top"
-                  data-testid="test-btn"
+                  data-testid="card-img"
                   src={`https://picsum.photos/200?=${i}`}
                 />
                 <Card.Body>

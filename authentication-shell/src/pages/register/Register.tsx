@@ -63,7 +63,6 @@ export default function Register() {
             formData.password === value ? "" : "Password don't match",
         });
         break;
-      
     }
     setFormData({ ...formData, [name]: value });
   };
@@ -90,7 +89,7 @@ export default function Register() {
   const handleFormSubmit = (event) => {
     event.preventDefault();
     if (!handleFormEmpty()) {
-      if (handleFormValidate()) {
+      if (!handleFormValidate()) {
         console.log(formData);
         const newFormData = {
           firstName: formData.firstName,
@@ -169,7 +168,11 @@ export default function Register() {
             className="inputfields"
           />
         </Form.Group>
-        <Button className="w-100 inputfields" type="submit"  data-testid="signp-btn">
+        <Button
+          className="w-100 inputfields"
+          type="submit"
+          data-testid="signp-btn"
+        >
           Sign Up
         </Button>
         <p className="text-center mt-2 ">
