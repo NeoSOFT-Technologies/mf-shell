@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Form, Button } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
-import "../../index.css";
+import "./register.css";
 import { useNavigate } from "react-router-dom";
 import {
   regexForName,
@@ -63,8 +63,6 @@ export default function Register() {
             formData.password === value ? "" : "Password don't match",
         });
         break;
-      default:
-        break;
     }
     setFormData({ ...formData, [name]: value });
   };
@@ -120,6 +118,7 @@ export default function Register() {
           <Form.Control
             type="text"
             name="firstName"
+            data-testid="firstname-input"
             value={formData.firstName}
             onChange={handleInputChange}
             className="inputfields"
@@ -130,6 +129,7 @@ export default function Register() {
           <Form.Control
             type="text"
             name="lastName"
+            data-testid="lastName-input"
             value={formData.lastName}
             onChange={handleInputChange}
             className="inputfields"
@@ -140,6 +140,7 @@ export default function Register() {
           <Form.Control
             type="email"
             name="email"
+            data-testid="email-input"
             value={formData.email}
             onChange={handleInputChange}
             className="inputfields"
@@ -150,6 +151,7 @@ export default function Register() {
           <Form.Control
             type="password"
             name="password"
+            data-testid="password-input"
             value={formData.password}
             onChange={handleInputChange}
             className="inputfields"
@@ -160,17 +162,23 @@ export default function Register() {
           <Form.Control
             type="password"
             name="confirmPassword"
+            data-testid="cnfpassword-input"
             value={formData.confirmPassword}
             onChange={handleInputChange}
             className="inputfields"
           />
         </Form.Group>
-        <Button className="w-100 inputfields" type="submit">
+        <Button
+          className="w-100 inputfields"
+          type="submit"
+          data-testid="signp-btn"
+        >
           Sign Up
         </Button>
         <p className="text-center mt-2 ">
           <button
             type="button"
+            data-testid="login-btn"
             className="forgetPassword"
             onClick={() => {
               navigate("/login");

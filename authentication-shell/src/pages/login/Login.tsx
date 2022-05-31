@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import { Form, Button } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
-import "../../index.css";
+import "./login.css";
 import { useNavigate } from "react-router-dom";
+import { regexForEmail, regexForPassword } from "../../resources/constants";
 import { login } from "../../services/service";
 // import { loginCall, jwt } from "../../services/service";
-import { regexForEmail, regexForPassword } from "../../resources/constants";
 
 export default function Login() {
   const navigate = useNavigate();
@@ -29,8 +29,6 @@ export default function Login() {
             : "Enter a Valid Password must contains minimum one Number,uppercase,lowercase,special Character (8-15).",
         });
         break;
-      default:
-        break;
     }
     setFormData({ ...formData, [name]: value });
   };
@@ -52,36 +50,31 @@ export default function Login() {
           navigate("/");
         });
       } else {
-        // ToastAlert("Please Enter Valid Details", "warning");
         console.log("Please Enter Valid Details", "warning");
       }
     } else {
-      // ToastAlert("Please Fill All Fields", "warning");
       console.log("Please Fill All Fields", "warning");
     }
   };
-  // const validate = (event) => {
-  //   event.preventDefault();
-  //   loginCall(username, password).then(() => {
-  //     sessionStorage.setItem("_token", jwt.value);
-  //     setTimeout(() => {
-  //       navigate("/");
-  //     }, 200);
-  //   });
-  // };
+
   return (
     <div className="centerMe bggrading">
-      <Form className="w-40 glassbg  p-4 " onSubmit={handleFormSubmit}>
+      <Form
+        className="w-40 glassbg  p-4 "
+        onSubmit={handleFormSubmit}
+        data-testid="form-submit"
+      >
         <h1 className="text-center heading ">Login</h1>
         <Form.Group className="mb-3" controlId="formBasicEmail">
           <Form.Label>Email</Form.Label>
           <Form.Control
             type="email"
             name="email"
+            data-testid="email-input"
             className="inputfields"
             value={formData.email}
             onChange={handleInputChange}
-          // required
+            // required
           />
         </Form.Group>
         <Form.Group className="mb-3" controlId="formBasicPassword">
@@ -89,16 +82,25 @@ export default function Login() {
           <Form.Control
             type="password"
             name="password"
+            data-testid="password-input"
             className="inputfields"
             value={formData.password}
             onChange={handleInputChange}
-          // required
+            // required
           />
         </Form.Group>
         <Form.Group className="mb-3" controlId="formBasicCheckbox">
-          <Form.Check type="checkbox" label="Remember me" />
+          <Form.Check
+            type="checkbox"
+            label="Remember me"
+            data-testid="checkbox-input"
+          />
         </Form.Group>
-        <Button className="w-100 inputfields" type="submit">
+        <Button
+          className="w-100 inputfields"
+          type="submit"
+          data-testid="login-Btn"
+        >
           Log In
         </Button>
 
@@ -109,6 +111,7 @@ export default function Login() {
           <button
             className="forgetPassword"
             type="button"
+            data-testid="register-Btn"
             onClick={() => {
               navigate("/register");
             }}
