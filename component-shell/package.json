@@ -39,10 +39,9 @@
   },
   "jest": {
     "coveragePathIgnorePatterns": [
-     "App.tsx",
-     "index.ts"
+      "App.tsx",
+      "index.ts"
     ]
-    
   },
   "dependencies": {
     "bootstrap": "^5.1.3",
