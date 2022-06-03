@@ -40,7 +40,8 @@
   "jest": {
     "coveragePathIgnorePatterns": [
       "App.tsx",
-      "index.ts","services"
+      "index.ts",
+      "services"
     ]
   },
   "dependencies": {

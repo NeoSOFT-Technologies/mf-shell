@@ -6,7 +6,7 @@ import Footer from "./Footer";
 it("render without crashing Footer", () => {
   render(
     <BrowserRouter>
-    <Footer/>
-     </BrowserRouter>
+      <Footer />
+    </BrowserRouter>
   );
 });

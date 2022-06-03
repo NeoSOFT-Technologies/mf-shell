@@ -1,0 +1,32 @@
+describe("My First E2E Test", () => {
+  it("should test login & registration page", () => {
+    cy.visit("http://localhost:3000/login");
+    cy.get(".centerMe").click();
+    cy.get("[data-testid=register-Btn]").click();
+    cy.get("[data-testid=firstname-input]").click();
+    cy.get("[data-testid=firstname-input]").type("tushar");
+    cy.get("[data-testid=lastName-input]").click();
+    cy.get("[data-testid=lastName-input]").type("saxena");
+    cy.get("[data-testid=email-input]").click();
+    cy.get("[data-testid=email-input]").type("{backspace}");
+    cy.get("[data-testid=email-input]").type("Tushar@gmail.com");
+    cy.get("[data-testid=password-input]").click();
+    cy.get("[data-testid=password-input]").type("tUSHAR@123");
+    cy.get("[data-testid=cnfpassword-input]").click();
+    cy.get("[data-testid=cnfpassword-input]").type("tUSHAR@123");
+    cy.get("[data-testid=signp-btn]").click();
+    cy.get(".w-40").submit();
+    cy.get(".centerMe").click();
+    cy.get("[data-testid=email-input]").click();
+    cy.get("[data-testid=email-input]").type("mihir.adelkar@gmail.com");
+    cy.get("[data-testid=password-input]").type("Mihir@123");
+    cy.get("[data-testid=login-Btn]").click();
+    cy.get("[data-testid=form-submit]").submit();
+    cy.get(".nav-link:nth-child(2)").click();
+    cy.get(".navbar:nth-child(1) .nav-link:nth-child(1)").click();
+    cy.get(".nav-link:nth-child(2)").click();
+    cy.get("[data-testid=forgetpassword-btn1]").click();
+    cy.get(".navbar:nth-child(1) .nav-link:nth-child(1)").click();
+    cy.visit("http://localhost:3000/login");
+  });
+});

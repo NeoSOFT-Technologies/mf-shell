@@ -44,7 +44,7 @@ export default function Users() {
                   </Card.Text>
                   <button
                     className="forgetPassword"
-                    data-testid="forgetpassword-btn"
+                    data-testid={`forgetpassword-btn${i}`}
                     onClick={() => handleUserNavigate(val.id)}
                   >
                     Details
