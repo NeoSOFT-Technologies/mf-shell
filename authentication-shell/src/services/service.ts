@@ -16,15 +16,24 @@ export const getUser = async () => {
   const res = await apiFactory().get("/users");
   return res.data;
 };
-export const getUserDetails = async (id) => {
+export const getUserDetails = async (id: string) => {
   const res = await apiFactory().get(`/users/${id}`);
   return res.data;
 };
-export const getHomeData = async () => {
-  const res = await apiFactory().get("/");
-  console.log(res.data);
+export const updateUser = async (id: string, data: any) => {
+  const res = await apiFactory().patch(`/users/${id}`, data);
   return res.data;
 };
+export const deleteUser = async (id: string) => {
+  const res = await apiFactory().delete(`/users/${id}`);
+  return res.data;
+};
+
+// export const getHomeData = async () => {
+//   const res = await apiFactory().get("/");
+//   console.log(res.data);
+//   return res.data;
+// };
 export async function getProfile() {
   return apiFactory().get("/authorized");
 }
