@@ -1,56 +1,64 @@
 import axios from "axios";
 
 const apiBaseUrl = process.env.API_BASE_URL || "https://localhost:5000/";
-
-const getDefaultPath = () => {
-  return apiBaseUrl;
-};
-
-const transformResponse = (input: string) => {
-  try {
-    return JSON.parse(input);
-  } catch {
-    //  Ignore ;
+class ApiFactoryWrapper {
+  private readonly baseURL;
+  constructor(URL: string = apiBaseUrl) {
+    this.baseURL = URL;
   }
-};
 
-const buildHeader = (obj = {}) => {
-  const header = {
-    Accept: "application/json",
-    "Content-Type": "application/json",
+  getDefaultPath = () => {
+    return apiBaseUrl;
   };
-  Object.assign(header, obj);
-  return header;
-};
 
-const apiFactory = (baseUrl = getDefaultPath(), header = {}) => {
-  const service = axios.create({
-    baseURL: baseUrl,
-    headers: buildHeader(header),
-    transformResponse: [
-      (data) => {
-        if (typeof data === "string") {
-          return transformResponse(data);
-        }
-        return data;
-      },
-    ],
-  });
-
-  service.interceptors.request.use(
-    (config) => {
-      const token = sessionStorage.getItem("_token");
-      if (token) {
-        config.headers.Authorization = "Bearer " + token;
-      }
-      return config;
-    },
-    (_error) => {
-      return _error;
+  transformResponse = (input: string) => {
+    try {
+      return JSON.parse(input);
+    } catch {
+      /* Ignore */
+      return false;
     }
-  );
+  };
 
-  return service;
-};
+  buildHeader = (obj = {}) => {
+    const header = {
+      Accept: "application/json",
+      "Content-Type": "application/json",
+    };
+    Object.assign(header, obj);
+    return header;
+  };
 
+  apiFactory = (baseUrl = this.getDefaultPath(), header = {}) => {
+    const service = axios.create({
+      baseURL: baseUrl,
+      headers: this.buildHeader(header),
+      transformResponse: [
+        (data) => {
+          if (typeof data === "string") {
+            return this.transformResponse(data);
+          }
+          return data;
+        },
+      ],
+    });
+
+    service.interceptors.request.use(
+      (config) => {
+        const token = sessionStorage.getItem("_token");
+        if (token) {
+          config.headers.Authorization = "Bearer " + token;
+        }
+        return config;
+      },
+      (_error) => {
+        return _error;
+      }
+    );
+
+    return service;
+  };
+}
+
+const apiFactory = new ApiFactoryWrapper().apiFactory;
 export default apiFactory;

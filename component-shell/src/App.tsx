@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 
 import "./index.css";
- const App = () => (
+const App = () => (
   <div className="container">
     <div>Name: component-shell</div>
     <div>Framework: react</div>
@@ -11,4 +11,4 @@ import "./index.css";
   </div>
 );
 ReactDOM.render(<App />, document.querySelector("#app"));
-export default  App;
+export default App;

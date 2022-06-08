@@ -1,4 +1,4 @@
-import { render,screen,fireEvent } from "@testing-library/react";
+import { render, screen, fireEvent } from "@testing-library/react";
 import React from "react";
 import "@testing-library/jest-dom/extend-expect";
 import { BrowserRouter } from "react-router-dom";
@@ -6,15 +6,15 @@ import Header from "./Header";
 it("render without crashing Header", () => {
   render(
     <BrowserRouter>
-    <Header/>
-     </BrowserRouter>
+      <Header />
+    </BrowserRouter>
   );
 });
 it("render the input buttons", () => {
   render(
     <BrowserRouter>
-    <Header/>
-     </BrowserRouter>
+      <Header />
+    </BrowserRouter>
   );
   const LoginBtn = screen.getByTestId("login-Btn");
   expect(LoginBtn).toBeInTheDocument();
