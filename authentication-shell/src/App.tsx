@@ -6,7 +6,7 @@ import ReactDOM from "react-dom";
 
 const App = () => (
   <>
-  {/* do not delete comment if not needed */}
+    {/* do not delete comment if not needed */}
     <div className="container">
       <div>Name: authentication-shell</div>
       <div>Framework: react</div>

@@ -7,8 +7,7 @@ import Home from "./Home";
 it("render without crashing Home", () => {
   render(
     <BrowserRouter>
-    <Home/>
-     </BrowserRouter>
+      <Home />
+    </BrowserRouter>
   );
 });
-
