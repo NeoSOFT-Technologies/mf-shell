@@ -5,6 +5,8 @@
     "build": "webpack --mode production",
     "build:dev": "webpack --mode development",
     "build:start": "cd dist && PORT=3001 npx serve",
+    "lint": "eslint . --ext js,jsx,mjs,ts,tsx ",
+    "lint:fix": "eslint . --ext js,jsx,mjs,ts,tsx --fix",
     "start": "webpack serve --open --mode development",
     "test": "react-scripts test",
     "start:live": "webpack serve --open --mode development --live-reload --hot"
@@ -15,6 +17,19 @@
     "email": "jherr@pobox.com"
   },
   "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.13.0",
+    "@typescript-eslint/parser": "^5.13.0",
+    "eslint": "^8.15.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-config-standard": "^17.0.0",
+    "eslint-plugin-filename-rules": "^1.2.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-n": "^15.2.0",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-promise": "^6.0.0",
+    "eslint-plugin-react": "^7.29.4",
+    "eslint-plugin-unicorn": "^42.0.0",
     "@babel/core": "^7.15.8",
     "@babel/plugin-transform-runtime": "^7.15.8",
     "@babel/preset-env": "^7.15.8",

@@ -1,0 +1,5 @@
+{
+    "./application-shell/{src,apps,libs,test}/**/*.{js,jsx,ts,tsx}": ["npm run --prefix tenant-config-service lint"],
+    "./authentication-shell/{src,apps,libs,test}/**/*.{js,jsx,ts,tsx}": ["npm run --prefix tenant-master-service lint"],
+    "./component-shel/{src,apps,libs,test}/**/*.{js,jsx,ts,tsx}": ["npm run --prefix tenant-provisioning lint"],
+}
