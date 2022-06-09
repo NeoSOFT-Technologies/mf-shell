@@ -1,24 +1,31 @@
 import React, { useEffect, useState } from "react";
 import { Button, Card, Container, Form, Modal } from "react-bootstrap";
 import { useParams, useNavigate } from "react-router-dom";
+import { regexForName } from "../../resources/constants";
 import { getUserDetails, deleteUser, updateUser } from "../../services/service";
-import { regexForName, regexForEmail, regexForPassword, } from "../../resources/constants";
 
 export default function UserDetails() {
   const { id } = useParams();
   const navigate = useNavigate();
-  const [user, setUser] = useState({ email: "", firstName: "", id: undefined, isActive: undefined, lastName: "", password: "" });
+  const [user, setUser] = useState({
+    email: "",
+    firstName: "",
+    id: undefined,
+    isActive: undefined,
+    lastName: "",
+    password: "",
+  });
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
-    //  isActive: undefined 
+    //  isActive: undefined
   });
   const [formError, setFormError] = useState({
     firstName: "",
     lastName: "",
     //  isActive: undefined
   });
-  const [validated, setValidated] = useState(false);
+  // const [validated, setValidated] = useState(false);
   const [showUpdateModal, setShowUpdateModal] = useState(false);
   useEffect(() => {
     getUserDetails(id).then((res) => {
@@ -33,19 +40,19 @@ export default function UserDetails() {
 
   const handleDeleteUser = () => {
     deleteUser(id).then((res) => {
-      console.log(res.data)
+      console.log(res.data);
       navigate("/users");
     });
-  }
+  };
   // const handleUpdateUser = () => {
   //   console.log("update");
   // }
   const handleUpdateModalOpen = () => {
     setShowUpdateModal(true);
-  }
+  };
   const handleUpdateModalClose = () => {
     setShowUpdateModal(false);
-  }
+  };
   const handleInputChange = (event) => {
     const { name, value } = event.target;
     switch (name) {
@@ -72,18 +79,15 @@ export default function UserDetails() {
   };
   const handleFormEmpty = () => {
     const empty = !!(
-      formData.firstName === "" &&
-      formData.lastName === ""
+      (formData.firstName === "" && formData.lastName === "")
       // && formData.isActive === ""
     );
     return empty;
   };
   const handleFormValidate = () => {
     const validate = !!(
-      formError.firstName === "" &&
-      formError.lastName === ""
+      (formError.firstName === "" && formError.lastName === "")
       // && formError.isActive === ""
-
     );
     return validate;
   };
@@ -108,7 +112,11 @@ export default function UserDetails() {
       if (handleFormValidate()) {
         console.log(formData);
         updateUser(id, formData);
-        setUser({ ...user, firstName: formData.firstName, lastName: formData.lastName });
+        setUser({
+          ...user,
+          firstName: formData.firstName,
+          lastName: formData.lastName,
+        });
         setShowUpdateModal(false);
       } else {
         // ToastAlert("Please Enter Valid Details", "warning");
@@ -127,18 +135,48 @@ export default function UserDetails() {
             <h2>User Details</h2>
           </Card.Header>
           <Card.Body>
-            <p><b>id: </b>{user.id}</p>
-            <p><b>firstName: </b>{user.firstName}</p>
-            <p><b>lastName: </b>{user.lastName}</p>
-            <p><b>email: </b>{user.email}</p>
-            <p><b>password: </b>{user.password}</p>
-            <p><b>Status: </b>{user.isActive ? "active" : "inactive"}</p>
-            <Button variant="warning" className="me-2" onClick={handleUpdateModalOpen}>Update</Button>
-            <Button variant="danger" className="me-2" onClick={handleDeleteUser}>Delete</Button>
+            <p>
+              <b>id: </b>
+              {user.id}
+            </p>
+            <p>
+              <b>firstName: </b>
+              {user.firstName}
+            </p>
+            <p>
+              <b>lastName: </b>
+              {user.lastName}
+            </p>
+            <p>
+              <b>email: </b>
+              {user.email}
+            </p>
+            <p>
+              <b>password: </b>
+              {user.password}
+            </p>
+            <p>
+              <b>Status: </b>
+              {user.isActive ? "active" : "inactive"}
+            </p>
+            <Button
+              variant="warning"
+              className="me-2"
+              onClick={handleUpdateModalOpen}
+            >
+              Update
+            </Button>
+            <Button
+              variant="danger"
+              className="me-2"
+              onClick={handleDeleteUser}
+            >
+              Delete
+            </Button>
           </Card.Body>
         </Card>
         <Modal show={showUpdateModal} onHide={handleUpdateModalClose}>
-          <Form noValidate validated={validated} onSubmit={handleFormSubmit}>
+          <Form noValidate onSubmit={handleFormSubmit}>
             <Modal.Header closeButton>
               <Modal.Title>Update User</Modal.Title>
             </Modal.Header>
@@ -153,7 +191,9 @@ export default function UserDetails() {
                   value={formData.firstName}
                   onChange={handleInputChange}
                 />
-                <Form.Control.Feedback>{formError.firstName}</Form.Control.Feedback>
+                <Form.Control.Feedback>
+                  {formError.firstName}
+                </Form.Control.Feedback>
               </Form.Group>
               <Form.Group>
                 <Form.Label>Last Name</Form.Label>
@@ -165,7 +205,9 @@ export default function UserDetails() {
                   value={formData.lastName}
                   onChange={handleInputChange}
                 />
-                <Form.Control.Feedback>{formError.lastName}</Form.Control.Feedback>
+                <Form.Control.Feedback>
+                  {formError.lastName}
+                </Form.Control.Feedback>
               </Form.Group>
               {/* <Form.Group>
                 <Form.Label>Status</Form.Label>
