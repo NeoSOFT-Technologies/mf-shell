@@ -1,5 +1,0 @@
-
-// .eslintignore
-node_modules/*
-webpack.config.js
-*/cypress/*

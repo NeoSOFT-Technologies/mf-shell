@@ -31,10 +31,10 @@ export default function Users() {
                   src={`https://picsum.photos/200?=${i}`}
                 />
                 <Card.Body>
-                  <Card.Title>
+                  <Card.Title className="text-white">
                     {val.firstName} {val.lastName}({val.id})
                   </Card.Title>
-                  <Card.Text>
+                  <Card.Text className="text-white">
                     {val.email}{" "}
                     {val.isActive ? (
                       <i className="bi bi-check-circle-fill text-success"></i>
