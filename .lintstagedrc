@@ -1,5 +1,5 @@
 {
     "./application-shell/{src,apps,libs,test}/**/*.{js,jsx,ts,tsx}": ["npm run --prefix application-shell lint:fix"],
     "./authentication-shell/{src,apps,libs,test}/**/*.{js,jsx,ts,tsx}": ["npm run --prefix authentication-shell lint:fix"],
-    "./component-shell/{src,apps,libs,test}/**/*.{js,jsx,ts,tsx}": ["npm run --prefix component-shell lint:fix"],
+    "./component-shell/{src,apps,libs,test}/**/*.{js,jsx,ts,tsx}": ["npm run --prefix component-shell lint:fix"]
 }

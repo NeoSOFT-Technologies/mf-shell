@@ -1,0 +1,6 @@
+name : CodeQL Configuration
+
+paths:
+  - './application-shell/src'
+  - './authentication-shell/src'
+  - './component-shell/src'
