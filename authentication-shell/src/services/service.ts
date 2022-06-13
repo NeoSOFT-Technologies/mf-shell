@@ -1,6 +1,6 @@
 import { BehaviorSubject } from "rxjs";
 import apiFactory from "../utils/api";
-export const jwt = new BehaviorSubject(undefined);
+export const jwt = new BehaviorSubject("");
 
 export const login = async (data) => {
   const res = await apiFactory().post("/auth/generateToken", data);

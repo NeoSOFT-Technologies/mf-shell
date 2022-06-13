@@ -1,5 +1,5 @@
 name : CodeQL Configuration
-
+# all the paths of application in mf-shell. 
 paths:
   - './application-shell/src'
   - './authentication-shell/src'

@@ -24,6 +24,7 @@
     "build:authentication-shell": "cd authentication-shell && npm run build",
     "build:component-shell": "cd component-shell && npm run build",
     "prebuild": "run-p lint:*",
+    "lint": "run-p lint:*",
     "build": "run-p build:*",
     "postinstall": "run-s install:*",
     "test:application-shell": "cd application-shell && npm run test",
