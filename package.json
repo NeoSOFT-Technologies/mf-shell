@@ -1,44 +1,47 @@
 {
   "name": "mf-shell",
   "version": "1.0.0",
-  "description": "install and run  \r ```\r docker-compose up\r ```",
+  "description": "",
+  "author": "",
+  "keywords": [],
+  "license": "ISC",
   "main": "index.js",
   "devDependencies": {
-    "@typescript-eslint/eslint-plugin": "^5.13.0",
-    "@typescript-eslint/parser": "^5.13.0",
-    "eslint": "^8.15.0",
-    "eslint-config-prettier": "^8.5.0",
-    "eslint-config-standard": "^17.0.0",
-    "eslint-plugin-filename-rules": "^1.2.0",
-    "eslint-plugin-import": "^2.26.0",
-    "eslint-plugin-n": "^15.2.0",
-    "eslint-plugin-node": "^11.1.0",
-    "eslint-plugin-prettier": "^4.0.0",
-    "eslint-plugin-promise": "^6.0.0",
-    "eslint-plugin-react": "^7.29.4",
-    "eslint-plugin-unicorn": "^42.0.0",
-    "husky": "^8.0.0",
+    "lint-staged": "^12.1.2",
     "npm-run-all": "^4.1.5",
-    "prettier": "^2.5.1",
-    "typescript": "~4.6.3"
+    "prettier": "^2.5.1"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "lint": "eslint . --ext js,jsx,mjs,ts,tsx ",
-    "lint:fix": "eslint . --ext js,jsx,mjs,ts,tsx --fix",
-    "precommit": "npm run lint && npm run lint:fix",
     "prepare": "husky install",
-    "prepush": "npm run lint",
+    "precommit": "lint-staged",
+    "lint:application-shell": "cd application-shell && npm run lint",
+    "lint:authentication-shell": "cd authentication-shell && npm run lint",
+    "lint:component-shell": "cd component-shell && npm run lint",
+    "install:application-shell": "cd application-shell && npm install",
+    "install:authentication-shell": "cd authentication-shell && npm install",
+    "install:component-shell": "cd component-shell && npm install",
+    "build:application-shell": "cd application-shell && npm run build",
+    "build:authentication-shell": "cd authentication-shell && npm run build",
+    "build:component-shell": "cd component-shell && npm run build",
+    "prebuild": "run-p lint:*",
+    "lint": "run-p lint:*",
+    "build": "run-p build:*",
+    "postinstall": "run-s install:*",
+    "test:application-shell": "cd application-shell && npm run test",
+    "test:authentication-shell": "cd authentication-shell && npm run test",
+    "test:component-shell": "cd component-shell && npm run test",
+    "test": "run-s test:*",
     "format": "prettier --write \"src/**/*.{js,jsx,json,css,scss}\""
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/NeoSOFT-Technologies/mf-shell.git"
   },
-  "author": "",
-  "license": "ISC",
   "bugs": {
     "url": "https://github.com/NeoSOFT-Technologies/mf-shell.git"
   },
-  "homepage": "https://github.com/NeoSOFT-Technologies/mf-shell.git"
+  "homepage": "https://github.com/NeoSOFT-Technologies/mf-shell.git",
+  "dependencies": {
+    "husky": "^8.0.1"
+  }
 }

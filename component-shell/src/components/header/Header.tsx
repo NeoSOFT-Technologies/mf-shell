@@ -18,14 +18,16 @@ export default function Header() {
     <>
       <Navbar bg="light" variant="light">
         <Container>
-          <Navbar.Brand href="#home">
-            <img
-              alt="Neosoft tech"
-              src="https://www.neosofttech.com/sites/all/themes/neosoft2017/images/neosoft.svg"
-              height="30"
-              className="d-inline-block align-top"
-            />
-          </Navbar.Brand>
+          <Link to="/">
+            <Navbar.Brand>
+              <img
+                alt="Neosoft tech"
+                src="https://www.neosofttech.com/sites/all/themes/neosoft2017/images/neosoft.svg"
+                height="30"
+                className="d-inline-block align-top"
+              />
+            </Navbar.Brand>
+          </Link>
           <Nav className="me-auto">
             <Link to="/" className="nav-link">
               Home
